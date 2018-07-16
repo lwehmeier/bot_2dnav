@@ -15,7 +15,9 @@
 <rosparam file="$(find bot_2dnav)/costmap_shared.yaml" command="load" ns="local_costmap" />
 <rosparam file="$(find bot_2dnav)/costmap_local.yaml" command="load" />
 <rosparam file="$(find bot_2dnav)/costmap_global.yaml" command="load" />
-<rosparam file="$(find bot_2dnav)/eband_local_planner.yaml" command="load" />
-<param name="base_local_planner" value="eband_local_planner/EBandPlannerROS  " />
+<rosparam file="$(find bot_2dnav)/teb_local_planner.yaml" command="load" />
+<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS  " />
+<param name="planner_frequency" value="1.0"/>
+<param name="controller_frequency" value="2.0"/>
 </node> 
 </launch>
