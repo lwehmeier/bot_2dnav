@@ -1,23 +1,5 @@
 <launch> 
 <master auto="start"/>
 <include file="$(find launch_slam)/launch/launch_nav.launch" />
-<!-- Run the map server -->
-<!--
-<node name="map_server" pkg="map_server" type="map_server" args="$(find my_map_package)/my_map.pgm my_map_resolution"/>
--->
-<!--- Run AMCL -->
-<!--
-<include file="$(find amcl)/examples/amcl_omni.launch" />
--->
-<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
-<rosparam file="$(find bot_2dnav)/costmap_shared.yaml" command="load" ns="global_costmap" />
-<rosparam file="$(find bot_2dnav)/costmap_shared.yaml" command="load" ns="local_costmap" />
-<rosparam file="$(find bot_2dnav)/costmap_local.yaml" command="load" />
-<rosparam file="$(find bot_2dnav)/costmap_global.yaml" command="load" />
-<rosparam file="$(find bot_2dnav)/teb_local_planner.yaml" command="load" />
-<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS  " />
-<param name="planner_frequency" value="1.0"/>
-<param name="controller_frequency" value="2.0"/>
-<remap from="cmd_vel" to="/move_base/nav_vel"/>
-</node> 
+<include file="$(find bot_2dnav)/launch/move_base.launch" />
 </launch>
