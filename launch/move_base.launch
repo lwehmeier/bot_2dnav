@@ -13,8 +13,8 @@
 <rosparam file="$(find bot_2dnav)/costmap_global.yaml" command="load" />
 <rosparam file="$(find bot_2dnav)/teb_local_planner.yaml" command="load" />
 <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS  " />
-<param name="planner_frequency" value="1.0"/>
-<param name="controller_frequency" value="2.0"/>
+<param name="planner_frequency" value="0.5"/>
+<param name="controller_frequency" value="0.5"/>
 <remap from="cmd_vel" to="/move_base/nav_vel"/>
 </node> 
 </launch>
