@@ -2,4 +2,5 @@
 <master auto="start"/>
 <include file="$(find launch_slam)/launch/launch_nav.launch" />
 <include file="$(find bot_2dnav)/launch/move_base.launch" />
+<include file="$(find local_obj_detector)/launch/local_obj_detector.launch" />
 </launch>
